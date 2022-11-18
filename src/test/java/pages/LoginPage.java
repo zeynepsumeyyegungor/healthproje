@@ -12,7 +12,13 @@ public class LoginPage {
     }
     @FindBy (xpath = "//*[@data-icon='user']") public WebElement userIcon;
     @FindBy (xpath = "//*[@id='ssn']") public WebElement registrationSSN;
+    @FindBy (xpath = "//*[text()='Registration']") public WebElement registrationPage;
     @FindBy (xpath = "//*[text()='Register']") public WebElement RegisterButton;
+    @FindBy (xpath = "//*[text()='Your SSN is required.']") public WebElement ssnRequiredWarning;
+    @FindBy (xpath = "//*[text()='Your FirstName is required.']") public WebElement firstNameRequiredWarning;
+    @FindBy (xpath = "//*[text()='Your LastName is required.']") public WebElement lastNameRequiredWarning;
+    @FindBy (xpath = "//*[text()='Your username is required.']") public WebElement userNameRequiredWarning;
+
     @FindBy (xpath = "//*[@id='firstName']") public WebElement registrationFirstName;
     @FindBy (xpath = "//*[@id='lastName']") public WebElement registrationLastName;
     @FindBy (xpath = "//*[@id='username']") public WebElement registrationUserName;
@@ -20,7 +26,9 @@ public class LoginPage {
     @FindBy (xpath = "//*[@id='firstPassword']") public WebElement registrationFirstPassword;
     @FindBy (xpath = "//*[@id='secondPassword']") public WebElement registrationSecondPassword;
     @FindBy (xpath = "//*[@id='register-submit']") public WebElement registrationRegisterSubmit;
-    @FindBy (xpath = "//*[text()='Your SSN is invalid']") public WebElement registrationSSNwarning;
-    @FindBy (xpath = "//*[text()='Registration Saved']") public WebElement registrationSavedMessage;
+    @FindBy (xpath = "//div[@class='invalid-feedback']") public WebElement registrationSSNwarning;
+
+    @FindBy (xpath = "//div[@class='Toastify__toast-body']") public WebElement registrationSavedMessage;
+
 
 }
