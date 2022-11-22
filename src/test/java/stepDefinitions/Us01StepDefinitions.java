@@ -7,13 +7,13 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import pages.LoginPage;
+import pages.MedunnaPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class Us01StepDefinitions {
-    LoginPage loginPage = new LoginPage();
+    MedunnaPage loginPage = new MedunnaPage();
     Faker faker = new Faker();
     Actions actions = new Actions(Driver.getDriver());
 
@@ -38,7 +38,7 @@ public class Us01StepDefinitions {
         loginPage.registrationSSN.click();
         actions.sendKeys(faker.number().digits(3)).sendKeys("-")
                 .sendKeys(faker.number().digits(2)).sendKeys("-")
-                .sendKeys(faker.number().digits(3)).sendKeys(Keys.TAB)
+                .sendKeys(faker.number().digits(4)).sendKeys(Keys.TAB)
                 .sendKeys(faker.name().firstName()).sendKeys(Keys.TAB)
                 .sendKeys(faker.name().lastName()).sendKeys(Keys.TAB)
                 .sendKeys(faker.name().username()).sendKeys(Keys.TAB)
@@ -49,6 +49,7 @@ public class Us01StepDefinitions {
 
     @Then("Kullanici Registration saved yazisinin gorundugunu dogrular")
     public void kullanici_registration_saved_yazisinin_gorundugunu_dogrular() {
+        ReusableMethods.waitFor(1);
         Assert.assertTrue(loginPage.registrationSavedMessage.isDisplayed());
     }
 
