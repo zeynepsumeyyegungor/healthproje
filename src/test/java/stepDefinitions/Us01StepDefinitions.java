@@ -1,6 +1,7 @@
 package stepDefinitions;
 
 import com.github.javafaker.Faker;
+import groovy.util.logging.Log;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -47,11 +48,7 @@ public class Us01StepDefinitions {
         ReusableMethods.waitFor(1);
     }
 
-    @Then("Kullanici Registration saved yazisinin gorundugunu dogrular")
-    public void kullanici_registration_saved_yazisinin_gorundugunu_dogrular() {
-        ReusableMethods.waitFor(1);
-        Assert.assertTrue(loginPage.registrationSavedMessage.isDisplayed());
-    }
+
 
     @Then("Kullanici sayfayi kapatir")
     public void kullanici_sayfayi_kapatir() {
@@ -64,29 +61,12 @@ public class Us01StepDefinitions {
         assert loginPage.registrationPage.isDisplayed();
     }
 
-    @And("Kullanici SSN kismina gecersiz bir SSN girer")
-    public void kullaniciSSNKisminaGecersizBirSSNGirer() {
-        loginPage.registrationSSN.sendKeys("125-25-222");
-        ReusableMethods.waitFor(1);
-        loginPage.registrationFirstName.click();
-        ReusableMethods.waitFor(1);
-    }
-
-    @And("Kullanici gecersiz SSN girdiginde {string} uyarisi aldigini dogrular")
-    public void kullaniciGecersizSSNGirdigindeUyarisiAldiginiDogrular(String arg0) {
-        Assert.assertTrue(loginPage.registrationSSNwarning.isDisplayed());
-    }
-
-    @And("Kullanici SSN kismini bos birakir")
-    public void kullaniciSSNKisminiBosBirakir() {
+    @And("Kullanici SSN alanini bos biraktiginda {string} uyarisi aldigini dogrular")
+    public void kullaniciSSNAlaniniBosBiraktigindaUyarisiAldiginiDogrular(String arg1) {
         loginPage.registrationSSN.click();
         ReusableMethods.waitFor(1);
         loginPage.registrationFirstName.click();
         ReusableMethods.waitFor(1);
-    }
-
-    @And("Kullanici SSN alanini bos biraktiginda {string} uyarisi aldigini dogrular")
-    public void kullaniciSSNAlaniniBosBiraktigindaUyarisiAldiginiDogrular(String arg1) {
         assert loginPage.ssnRequiredWarning.isDisplayed();
     }
 
@@ -125,5 +105,50 @@ public class Us01StepDefinitions {
         ReusableMethods.waitFor(1);
         assert loginPage.userNameRequiredWarning.isDisplayed();
     }
+
+    @And("Kullanici First Name alanina herhangi bir karakter girdiginde uyari mesaji almadigini dogrular")
+    public void kullaniciFirstNameAlaninaHerhangiBirKarakterGirdigindeUyariMesajiAlmadiginiDogrular() {
+        loginPage.registrationFirstName.sendKeys("*");
+        boolean uyariYazisi = true;
+        try {
+            loginPage.firstNameRequiredWarning.isDisplayed();
+        } catch (Exception e) {
+            uyariYazisi = false;
+        }
+        Assert.assertFalse(uyariYazisi);
+    }
+
+    @And("Kullanici SSN kismina {string} girdiginde SSN invalid uyarisi alir")
+    public void kullaniciSSNKisminaGirdigindeSSNInvalidUyarisiAlir(String gecersizSSN) {
+        loginPage.registrationSSN.sendKeys(gecersizSSN);
+        loginPage.registrationFirstName.click();
+        assert loginPage.ssnInvalidwarning.isDisplayed();
+    }
+
+    @And("Kullanici Last Name alanina herhangi bir karakter girdiginde uyari mesaji almadigini dogrular")
+    public void kullaniciLastNameAlaninaHerhangiBirKarakterGirdigindeUyariMesajiAlmadiginiDogrular() {
+        loginPage.registrationLastName.sendKeys("*");
+        boolean uyariYazisi = true;
+        try {
+            loginPage.lastNameRequiredWarning.isDisplayed();
+        } catch (Exception e) {
+            uyariYazisi = false;
+        }
+        Assert.assertFalse(uyariYazisi);
+    }
+
+    @And("Kullanici gecerli SSN numarasi girdiginde uyari almadigini dogrular")
+    public void kullaniciGecerliSSNNumarasiGirdigindeUyariAlmadiginiDogrular() {
+        loginPage.registrationSSN.sendKeys(faker.idNumber().ssnValid());
+        ReusableMethods.waitFor(1);
+        boolean uyariYazisi = true;
+        try {
+            loginPage.ssnInvalidwarning.isDisplayed();
+        } catch (Exception e) {
+            uyariYazisi = false;
+        }
+        Assert.assertFalse(uyariYazisi);
+    }
 }
+
 
