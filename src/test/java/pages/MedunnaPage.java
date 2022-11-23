@@ -299,6 +299,23 @@ public class MedunnaPage {
 
     //300-349 Yahya
 
+    @FindBy(xpath = "//span[contains(text(),'Sign in')]") public WebElement sign;
+    @FindBy(xpath = "//*[@name='username']") public WebElement usurname;
+    @FindBy(xpath = "//*[@name='password']") public WebElement password;
+    @FindBy(xpath = "//*[@class='btn btn-primary']") public WebElement sign2;
+    @FindBy(xpath = "//span[contains(text(),'Settings')]") public WebElement seetings;
+    @FindBy(xpath = "//*[@class='svg-inline--fa fa-user fa-w-14 ']") public WebElement mertDemirci;
+    @FindBy(xpath = "//span[contains(text(),'Remember me')]") public WebElement remember;
+    @FindBy(xpath = "(//*[@class='alert alert-warning fade show'])[1]") public WebElement didYouForgetPass;
+    @FindBy(xpath = "(//*[@class='alert alert-warning fade show'])[2]") public WebElement registirnewAccount;
+    @FindBy(xpath = "//html") public WebElement ekranresmi;
+    @FindBy(xpath = "//*[@id='firstName']") public WebElement SettingsfirstName;
+    @FindBy(xpath = "//*[@id='lastName']") public WebElement SettingslastName;
+    @FindBy(xpath = "//*[@id='email']") public WebElement Settingsemail;
+    @FindBy(xpath = "//button[@type='submit']") public WebElement save;
+    @FindBy(xpath = "//strong[contains(text(),'Settings saved!')]") public WebElement seettingsSaved;
+    @FindBy(xpath ="//*[contains(text(),'Authentication information not correct.')]") public WebElement hataliGirisUyarisi;
+    @FindBy(xpath = "//span[contains(text(),'Cancel')]") public WebElement cancel;
 
 
 

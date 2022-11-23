@@ -221,4 +221,12 @@ public class ReusableMethods {
         }
     }
 
+    //=====js getValue ====//
+    public static String  getValueWithJs(String elementId) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        String value = js.executeScript("return document.getElementId('" + elementId + "').value").toString();
+        return value;
+
+    }
+
 }
