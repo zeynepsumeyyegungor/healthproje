@@ -27,10 +27,10 @@ public class MedunnaPage {
     @FindBy (xpath = "//*[@id='firstPassword']") public WebElement registrationFirstPassword;
     @FindBy (xpath = "//*[@id='secondPassword']") public WebElement registrationSecondPassword;
     @FindBy (xpath = "//*[@id='register-submit']") public WebElement registrationRegisterSubmit;
-    @FindBy (xpath = "//div[@class='invalid-feedback']") public WebElement registrationSSNwarning;
+    @FindBy (xpath = "//div[@class='invalid-feedback']") public WebElement ssnInvalidwarning;
 
     @FindBy (xpath = "//div[@class='Toastify__toast-body']") public WebElement registrationSavedMessage;
-
+    @FindBy (xpath = "//input[@class='is-touched is-dirty av-valid form-control']") public WebElement registrationFirstNameOk;
 
 
 
