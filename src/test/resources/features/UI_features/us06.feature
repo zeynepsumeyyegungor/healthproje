@@ -7,12 +7,13 @@ Feature: US06 Medunna Settings
     Then kullanici gecerli usurname girer US04
     Then kullanici gecerli password girer US04
     Then kullanici signinnn butonuna tiklar US04
-    Then user iconuna tiklar US06
-    Then kullanci settings butonuna tiklar US06
+    Then user iconuna tiklaryyy
+    Then kullanci settings butonuna tiklaryyy
 
   @US06-TC01
   Scenario: TC01 Bilgileri Listele
-    Then kullanici varolan bilgileri listeler
+
+    Then kullanici varolan bilgileri listeler US06
     And  sayfayi kapatirr US04
 
   @US06-TC02
