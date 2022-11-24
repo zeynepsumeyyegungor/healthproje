@@ -25,57 +25,57 @@ public class Us04StepDefinitions {
     }
     @Then("kullanci sign in butonuno tiklar  US04")
     public void kullancisigninbutonunotiklarUS04() {obj.userIcon.click();
-        obj.sign.click();
+        obj.yysign.click();
     }
 
     @Then("kullanici gecerli usurname girer US04")
-    public void kullanicigecerliusurnamegirerUS04()  {obj.usurname.sendKeys(ConfigReader.getProperty("email"));
+    public void kullanicigecerliusurnamegirerUS04()  {obj.yyusurname.sendKeys(ConfigReader.getProperty("email"));
         ReusableMethods.waitFor(2);
     }
     @Then("kullanicigecerlipasswordgirerUS04")
     public void kullanicigecerlipasswordgirerUS04() {
-        obj.password.sendKeys(ConfigReader.getProperty("password"));
+        obj.yypassword.sendKeys(ConfigReader.getProperty("password"));
         ReusableMethods.waitFor(2);
 
     }
 
     @Then("kullanici signinnn butonuna tiklar US04")
     public void kullanicisigninnnbutonunatiklarUS04() throws IOException {
-        obj.sign2.click();
+        obj.yysign2.click();
         Assert.assertTrue("succes to message uyarisi goruntulenemedi",Driver.getDriver().getPageSource().contains("success to  message"));
        ReusableMethods.waitFor(2);
-       ReusableMethods.getScreenshotWebElement("succes to message", obj.ekranresmi);
+       ReusableMethods.getScreenshotWebElement("succes to message", obj.yyekranresmi);
     }
 
     @Then("kullanici Remember me secenegi dogrular US04")
     public void kullaniciRemembermesecenegidogrularUS04(){
-        Assert.assertTrue(obj.remember.isDisplayed());
+        Assert.assertTrue(obj.yyremember.isDisplayed());
     }
     @Then("kullanici Did you forget  password secenegini dogrular US04")
     public void kullaniciDidyouforgetpasswordseceneginidogrularUS04() {
-        Assert.assertTrue(obj.didYouForgetPass.isDisplayed());
+        Assert.assertTrue(obj.yydidYouForgetPass.isDisplayed());
 
     }
     @Then("kullanici You dont have an account get Register a new account secenegini dogrularr US04")
     public void kullaniciYoudonthaveanaccountgetRegisteranewaccountseceneginidogrularrUS04() {
-        Assert.assertTrue(obj.registirnewAccount.isDisplayed());
+        Assert.assertTrue(obj.yyregistirnewAccount.isDisplayed());
     }
 
 
     @Then("kullanici hatali giris yapar US04")
     public void kullanicihataligirisyaparUS04() throws IOException {
-        obj.usurname.sendKeys("team1111");
-        obj.password.sendKeys("team89668");
-        obj.sign2.click();
+        obj.yyusurname.sendKeys("team1111");
+        obj.yypassword.sendKeys("team89668");
+        obj.yysign2.click();
         WebDriverWait wait=new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(5));
-        ReusableMethods.getScreenshotWebElement("popMessage",obj.hataliGirisUyarisi);
-        wait.until(ExpectedConditions.visibilityOf(obj.hataliGirisUyarisi));
-        Assert.assertTrue(obj.hataliGirisUyarisi.isDisplayed());
+        ReusableMethods.getScreenshotWebElement("popMessage",obj.yyhataliGirisUyarisi);
+        wait.until(ExpectedConditions.visibilityOf(obj.yyhataliGirisUyarisi));
+        Assert.assertTrue(obj.yyhataliGirisUyarisi.isDisplayed());
     }
     @Then("kullanici cancel secenegini dogrular US04")
     public void kullanicicancelseceneginidogrularUS04() {
         ReusableMethods.waitFor(2);
-        Assert.assertTrue(obj.cancel.isDisplayed());
+        Assert.assertTrue(obj.yycancel.isDisplayed());
     }
     @And("sayfayi kapatirr US04")
     public void sayfayikapatirrUS04() {
