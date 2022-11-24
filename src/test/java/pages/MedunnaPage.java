@@ -48,11 +48,11 @@ public class MedunnaPage {
 
 
     //50-99 Ahmet
-
-
-
-
-
+    @FindBy (xpath = "(//a[@href='/physician-appointment'])[2]") public WebElement myAppointments;
+    @FindBy (xpath = "//input[@id='fromDate']") public WebElement dateSelectFrom;
+    @FindBy (xpath = "//input[@id='toDate']") public WebElement dateSelectTo;
+    @FindBy (xpath = "//a[@class='btn btn-primary btn-sm']") public WebElement appointmentsFirstEdit;
+    @FindBy (xpath = "//a[@href='/tests/appointment/309383']") public WebElement showTestResults;
 
 
 
@@ -348,7 +348,7 @@ public class MedunnaPage {
 
 
     //350-399 Zeynep
-
+   @FindBy (xpath = "//button[@id=\"save-entity\"]")  public WebElement createOrEditAppointmentsSave;
 
 
 
