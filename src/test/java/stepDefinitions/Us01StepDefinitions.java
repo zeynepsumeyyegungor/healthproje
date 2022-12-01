@@ -54,8 +54,6 @@ public class Us01StepDefinitions {
     public void kullanici_sayfayi_kapatir() {
         Driver.closeDriver();
     }
-
-
     @And("Kullanici Registration sayfasinin acildigini dogrular")
     public void kullaniciRegistrationSayfasininAcildiginiDogrular() {
         assert loginPage.registrationPage.isDisplayed();

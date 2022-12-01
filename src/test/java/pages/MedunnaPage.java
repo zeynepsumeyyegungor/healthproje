@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class MedunnaPage {
 
     //1-49 Mert
@@ -348,9 +350,35 @@ public class MedunnaPage {
 
 
     //350-399 Zeynep
-   @FindBy (xpath = "//button[@id=\"save-entity\"]")  public WebElement createOrEditAppointmentsSave;
+   @FindBy (xpath = "//button[@id='save-entity']")  public WebElement createOrEditAppointmentsSave;
+   @FindBy (xpath = "//tr//th[1]") public WebElement idAppointments;
+   @FindBy (xpath = "//tr//th[2]") public WebElement startDateTimeAppointments;
+   @FindBy (xpath = "//tr//th[3]") public WebElement endDataTimeAppointments;
+   @FindBy (xpath = "//tr//th[4]") public WebElement statusAppointments;
+   @FindBy (xpath = "//tr//th[11]") public WebElement physicianAppointments;
+   @FindBy (xpath = "//tr//th[12]") public WebElement patientAppointments;
+   @FindBy (xpath = "//*[@id='appointment-anamnesis']") public WebElement anamnesisBoxZSG;
+   @FindBy (xpath = "//*[@id='appointment-treatment']") public WebElement treatmentBoxZSG;
+   @FindBy (xpath = "//*[@id='appointment-diagnosis']") public WebElement diagnosisBoxZSG;
+   @FindBy (xpath = "//*[@id='appointment-prescription']") public WebElement prescriptionBoxZSG;
+   @FindBy (xpath = "//*[@id='appointment-description']") public WebElement descriptionBoxZSG;
+   @FindBy(xpath = "//option[@value='PENDING']") public WebElement pendingSelect;
+   @FindBy (xpath = "//*[@class='btn btn-success btn-sm']") public WebElement requestATestZSG;
+   @FindBy (xpath = "//*[@id='appointment-status']") public WebElement completedBoxZSG;
+    @FindBy (xpath = "(//*[@class='hand'])[1]") public WebElement idBoxZSG;
+    @FindBy (xpath = "//*[@class='d-none d-md-inline']") public List<WebElement> viewResultBoxListZSG;
+    @FindBy (xpath = "//*[@class='btn btn-link btn-sm']") public List<WebElement> idResultBoxListZSG;
 
+    @FindBy (xpath = "//*[@class='btn btn-danger btn-sm']") public WebElement showResultTestZSG;
 
+   @FindBy (xpath = "//*[@id='132751']") public WebElement glucoseTestClick;
+   @FindBy (xpath = "//*[@id='1402']") public WebElement ureaTestClick;
+   @FindBy (xpath = "//*[@id='132793']") public WebElement creatinineTestClick;
+   @FindBy (xpath = "//*[@id='74693']") public WebElement sodiumTestClick;
+   @FindBy (xpath = "//*[@id='132795']") public WebElement potassiumTestClick;
+   @FindBy (xpath = "//*[@id='132796']") public WebElement totalProteinTestClick;
+   @FindBy (xpath = "//*[@id='132797']") public WebElement albuminTestClick;
+   @FindBy (xpath = "//*[@id='132799']") public WebElement hemoglobinTestClick;
 
 
 
