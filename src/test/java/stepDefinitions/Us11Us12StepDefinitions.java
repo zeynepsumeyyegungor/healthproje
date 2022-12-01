@@ -170,8 +170,8 @@ public class Us11Us12StepDefinitions {
         Robot robot = new Robot();
         for (int i = 0; i < 2; i++) {
             robot.keyPress(KeyEvent.VK_CONTROL);
-            robot.keyPress(KeyEvent.VK_SUBTRACT); // %10 Kucultme
-            robot.keyRelease(KeyEvent.VK_SUBTRACT); // %10 Kucultme
+            robot.keyPress(KeyEvent.VK_SUBTRACT); // %20 Kucultme
+            robot.keyRelease(KeyEvent.VK_SUBTRACT); // %20 Kucultme
             robot.keyRelease(KeyEvent.VK_CONTROL);
             //  Driver.getDriver().navigate().refresh();
         }
