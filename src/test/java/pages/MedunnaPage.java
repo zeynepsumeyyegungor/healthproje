@@ -4,9 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
-
 import java.util.List;
-
 public class MedunnaPage {
 
     //1-49 Mert
@@ -53,9 +51,33 @@ public class MedunnaPage {
     @FindBy (xpath = "(//a[@href='/physician-appointment'])[2]") public WebElement myAppointments;
     @FindBy (xpath = "//input[@id='fromDate']") public WebElement dateSelectFrom;
     @FindBy (xpath = "//input[@id='toDate']") public WebElement dateSelectTo;
-    @FindBy (xpath = "//a[@class='btn btn-primary btn-sm']") public WebElement appointmentsFirstEdit;
+    @FindBy (xpath = "(//a[@class='btn btn-primary btn-sm'])[1]") public WebElement appointmentsFirstEdit;
     @FindBy (xpath = "//a[@href='/tests/appointment/309383']") public WebElement showTestResults;
-
+    @FindBy (xpath = "(//a[@class='btn btn-info btn-sm'])[4]") public WebElement testsViewResults4;
+    @FindBy (xpath = "//tr//td[1]") public List<WebElement> testResultsColumn1List;
+    @FindBy (xpath = "//tr//td[2]") public List<WebElement> testResultsColumn2List;
+    @FindBy (xpath = "//tr//td[3]") public List<WebElement> testResultsColumn3List;
+    @FindBy (xpath = "//tr//td[4]") public List<WebElement> testResultsColumn4List;
+    @FindBy (xpath = "//tr//td[5]") public List<WebElement> testResultsColumn5List;
+    @FindBy (xpath = "//tr//td[6]") public List<WebElement> testResultsColumn6List;
+    @FindBy (xpath = "//tr//td[7]") public List<WebElement> testResultsColumn7List;
+    @FindBy (xpath = "//tr//td[8]") public List<WebElement> testResultsColumn8List;
+    @FindBy (xpath = "//input[@id='appointment-id']") public WebElement EditAnAppointmentIdTextBox;
+    @FindBy (xpath = "//button[@class='btn btn-warning btn-sm']") public WebElement EditAnAppointmentRequestInpatientButton;
+    @FindBy (xpath = "(//a[@href='/ps-in-patient'])[2]") public WebElement myInPatients;
+    @FindBy (xpath = "//tr//td[8]") public List<WebElement> inPatientsAppointmentList;
+    @FindBy (xpath = "//th") public List<WebElement> inPatientsThead;
+    @FindBy (xpath = "//div[@class='Toastify__toast-body']") public WebElement toastifyCountryMessage;
+    @FindBy (xpath = "(//a[@href='/country'])[2]") public WebElement countryLink;
+    @FindBy (xpath = "(//a[@href='/c-state'])[2]") public WebElement stateCityLink;
+    @FindBy (id = "jh-create-entity") public WebElement createANewCountry;
+    @FindBy (xpath = "//input[@id=\"country-name\"]") public WebElement nameTextBoxCreateOrEditANewCountry;
+    @FindBy (id = "save-entity") public WebElement saveButon;
+    @FindBy (xpath = "//tr//td[1]") public List<WebElement> countriesIdList;
+    @FindBy (id = "jhi-confirm-delete-country") public WebElement countriesDeleteConfirmButon;
+    @FindBy (id = "hospitalmsappfrontendApp.country.delete.question") public WebElement countriesDeleteButonConfirmMessage;
+    @FindBy (id = "jh-create-entity") public WebElement createANewStateCity;
+    @FindBy (xpath = "//input[@id='c-state-name']") public WebElement createOrEditStateCityNameTextBox;
 
 
 
