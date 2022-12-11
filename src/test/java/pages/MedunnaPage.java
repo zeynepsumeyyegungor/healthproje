@@ -4,6 +4,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
+
+import java.awt.*;
 import java.util.List;
 public class MedunnaPage {
 
@@ -401,6 +403,27 @@ public class MedunnaPage {
    @FindBy (xpath = "//*[@id='132796']") public WebElement totalProteinTestClick;
    @FindBy (xpath = "//*[@id='132797']") public WebElement albuminTestClick;
    @FindBy (xpath = "//*[@id='132799']") public WebElement hemoglobinTestClick;
+   @FindBy (xpath = "//li[@id='entity-menu']") public WebElement itemTitlesMenuZSG;
+    @FindBy (xpath = "//span[text()='Messages']") public WebElement messagesButtonZSG;
+    @FindBy (xpath = "//tbody/tr[1]/td[5]") public WebElement mesajPortalMesajSutunZSG;
+    @FindBy (xpath = "//tbody/tr[1]/td[2]") public WebElement mesajPortalIsimSutunZSG;
+    @FindBy (xpath = "//tbody/tr[1]/td[5]") public WebElement mesajPortalEmailSutunZSG;
+    @FindBy (xpath = "//a[@id='jh-create-entity']") public WebElement createANewMessageButtonZSG;
+    @FindBy (xpath = "//input[@id='c-message-name']") public WebElement adminMessageNameBoxZSG;
+    @FindBy (xpath = "//input[@id='c-message-email']") public WebElement adminMessageEmailBoxZSG;
+    @FindBy (xpath = "//input[@id='c-message-subject']") public WebElement adminMessageSubjectBoxZSG;
+    @FindBy (xpath = "//input[@id='c-message-message']") public WebElement adminMessageYazBoxZSG;
+    @FindBy (xpath = "//button[@id='save-entity']") public WebElement messageSavedButtonZSG;
+    @FindBy (xpath = "//div[@role='alert']") public WebElement mesajCreatedTextZSG;
+    @FindBy (xpath = "(//*[@class='svg-inline--fa fa-sort fa-w-10 '])[1]") public WebElement idOkBoxZSG;
+    @FindBy (xpath = "//*[@href='/c-message/396491/edit']") public WebElement mesajEditBoxZSG;
+    @FindBy (xpath = "//div[@role='alert']") public WebElement mesajUpdatedTextZSG;
+    @FindBy (xpath = "//*[@href='/c-message/396499/delete']") public WebElement mesajDeleteBoxZSG;
+    @FindBy (xpath = "//button[@id='jhi-confirm-delete-cMessage']") public WebElement deleteButtonOnayZSG;
+    @FindBy (xpath = "//div[@role='alert']") public WebElement mesajDeletedTextZSG;
+
+
+
 
 
 
