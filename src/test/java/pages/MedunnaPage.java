@@ -416,9 +416,9 @@ public class MedunnaPage {
     @FindBy (xpath = "//button[@id='save-entity']") public WebElement messageSavedButtonZSG;
     @FindBy (xpath = "//div[@role='alert']") public WebElement mesajCreatedTextZSG;
     @FindBy (xpath = "(//*[@class='svg-inline--fa fa-sort fa-w-10 '])[1]") public WebElement idOkBoxZSG;
-    @FindBy (xpath = "//*[@href='/c-message/396491/edit']") public WebElement mesajEditBoxZSG;
+    @FindBy (xpath = "(//*[@class='btn btn-primary btn-sm'])[1]") public WebElement mesajEditBoxZSG;
     @FindBy (xpath = "//div[@role='alert']") public WebElement mesajUpdatedTextZSG;
-    @FindBy (xpath = "//*[@href='/c-message/396499/delete']") public WebElement mesajDeleteBoxZSG;
+    @FindBy (xpath = "(//*[@class='btn btn-danger btn-sm'])[1]") public WebElement mesajDeleteBoxZSG;
     @FindBy (xpath = "//button[@id='jhi-confirm-delete-cMessage']") public WebElement deleteButtonOnayZSG;
     @FindBy (xpath = "//div[@role='alert']") public WebElement mesajDeletedTextZSG;
 

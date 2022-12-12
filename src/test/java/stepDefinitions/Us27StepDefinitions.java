@@ -20,7 +20,7 @@ public class Us27StepDefinitions {
     MedunnaPage medunnaPage = new MedunnaPage();
     Actions actions = new Actions(Driver.getDriver());
     Faker faker = new Faker();
-    Robot robot = new Robot();
+    //Robot robot = new Robot();
 
     public Us27StepDefinitions() throws AWTException {
     }
@@ -125,17 +125,14 @@ public class Us27StepDefinitions {
 
     @Then("Kendi olusturdugu mesajin edit bolumune tiklar.")
     public void kendiOlusturduguMesajinEditBolumuneTiklar() {
-        for (int i = 0; i < 2; i++) {
-            robot.keyPress(KeyEvent.VK_CONTROL);
-            robot.keyPress(KeyEvent.VK_SUBTRACT); // %20 Kucultme
-            robot.keyRelease(KeyEvent.VK_SUBTRACT); // %20 Kucultme
-            robot.keyRelease(KeyEvent.VK_CONTROL);
-            Driver.getDriver().navigate().refresh();
-            medunnaPage.mesajEditBoxZSG.click();
-            ReusableMethods.waitFor(3);
-
-        }
-
+        //for (int i = 0; i < 2; i++) {
+        //  robot.keyPress(KeyEvent.VK_CONTROL);
+        //robot.keyPress(KeyEvent.VK_SUBTRACT); // %20 Kucultme
+        //robot.keyRelease(KeyEvent.VK_SUBTRACT); // %20 Kucultme
+        //robot.keyRelease(KeyEvent.VK_CONTROL);
+        //Driver.getDriver().navigate().refresh();
+        ReusableMethods.jsScrollClick(medunnaPage.mesajEditBoxZSG);
+        ReusableMethods.waitFor(3);
     }
 
     @Then("Mesajina guncelleme yapar.")
